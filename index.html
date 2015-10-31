@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title>Ninja to Cat</title>
+	<meta name="description" content="This webpage contains an image that's split into five pieces. As each individual peace is clicked on, and new peace of image is revealed.">
+	<meta charset="utf-8">
+
+	<!-- Links and Scripts -->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script>
+		$('document').ready(function(){
+			$('img').click(function(){
+				var oldSrc= $(this).attr('src');
+				var newSrc= $(this).attr('alt-Src');
+				$(this).attr('src', newSrc);
+				$(this).attr('altSrc', oldSrc);
+			}) // End of click function //
+
+			$('img').hover(function(){
+				$('body').css('background-color', 'rgb(180,180,180)')
+			}) // End of hover function //
+		})
+	</script>
+</head>
+<body>
+	<div id="container">
+		<h1>Ninja Cat</h1>
+		<p>Click on any of the pieces of the image below and see what happens.</p>
+		<!-- Start of image pieces -->
+		<img src="img/cat0.png" altSrc="img/ninja0.png" alt="image piece 1">
+		<img src="img/cat1.png" altSrc="img/ninja1.png" alt="image piece 2">
+		<img src="img/cat2.png" altSrc="img/ninja2.png" alt="image piece 3">
+		<img src="img/cat3.png" altSrc="img/ninja3.png" alt="image piece 4">
+		<img src="img/cat4.png" altSrc="img/ninja4.png" alt="image piece 5">
+	</div> <!-- End of container -->
+</body>
+</html>
